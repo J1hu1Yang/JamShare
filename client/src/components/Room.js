@@ -9,6 +9,9 @@ import {
   setSocketName,
 } from './Socket';
 import './App.css'
+import image1 from './assets/images/playing.png'
+import image2 from './assets/images/record.png'
+
 function Room() {
   const rooms = ['Room 1', 'Room 2', 'Room 3'];
   const [room, setRoom] = useState(rooms[0]); // rooms[0] is default value which is "Room 1"
@@ -17,6 +20,7 @@ function Room() {
   const [chat, setChat] = useState([]);
   const prevRoomRef = useRef();
   const messageBoxRef = useRef();
+  
 
   useEffect(() => {
     prevRoomRef.current = room;
@@ -85,6 +89,68 @@ function Room() {
           </button>
         </div>
       ))}
+      
+      
+      <div class="ProjectSectionContent" >
+        <div class="ProjectSectionBlock">
+          <div class="userblock">
+          <div class="ProjectSectionBlock1">
+            <div class="userlist">
+            <img class="rounded" src={image2} width="50" height="50"alt=" UserImage "></img>
+              username
+            </div>
+            <div class="userlist">
+            <img class="rounded" src={image2} width="50" height="50"alt=" UserImage "></img>
+              username
+            </div>
+            <div class="userlist">
+            <img class="rounded" src={image2} width="50" height="50"alt=" UserImage "></img>
+              username
+            </div>
+            <div class="userlist">
+            <img class="rounded" src={image2} width="50" height="50"alt=" UserImage "></img>
+              username
+            </div>
+            
+            </div>
+           </div>
+
+          <div class="recordblock">
+          <div class="ProjectSectionBlock1">
+            <div class="userlist">
+            <img class="rounded" src={image1} width="50" height="50"alt=" recording "></img>
+            recording
+            </div>
+            <div class="userlist">
+            <img class="rounded" src={image1} width="50" height="50"alt=" recording "></img>
+            recording
+            </div>
+            <div class="userlist">
+            <img class="rounded" src={image1} width="50" height="50"alt=" recording "></img>
+            recording
+            </div>
+            <div class="userlist">
+            <img class="rounded" src={image1} width="50" height="50"alt=" recording "></img>
+            recording
+            </div>
+            
+            </div>
+           </div>
+           
+           <div class="jamblock">
+          
+            <h1>JAM</h1>
+            <img class="rounded" src={image1} width="250" height="250"alt=" recording "></img>
+          
+           </div>
+            
+
+
+
+          </div>
+        </div>
+
+
       <h1 className='a1'>Online Chat:</h1>
       <div className='a3'>
        <input
