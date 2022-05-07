@@ -174,9 +174,12 @@ server.listen(port, () => console.log(`Listening on port ${port}`));
 
 //app.use(express.static(path.resolve(__dirname, './client/build')));
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static('public'))
+app.use(express.static('build'))
+
 app.get('*', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/../client/build/index.html`));
+  res.send(res.sendFile(path.join(__dirname, '../client', 'build', 'index.html')));
+  //res.sendFile(path.join(`${__dirname}/../client/build/index.html`));
 });
 
 module.exports = app;
