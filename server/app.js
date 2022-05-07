@@ -19,9 +19,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //just a response if people access server directly
+/*
 app.get('/', function (request, response) {
   response.sendFile(__dirname + '/message.json');
 });
+*/
 
 //Some cors and socket io things to make requests accepted from outsources
 app.post('/chat', function (request, response) {
@@ -66,8 +68,6 @@ io.on('connection', (socket) => {
 
   //broadcast incoming stream to all clients in session
   socket.on('client-audio-stream', (data)=> { Sessions.streamToSession(data, socket.id)});
-
-
 
   let socketRoom; //Current room of the socket for chat prototype
 
@@ -175,7 +175,7 @@ server.listen(port, () => console.log(`Listening on port ${port}`));
 app.use(express.static(path.resolve(__dirname, './client/build')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  res.sendFile(path.resolve(`${__dirname}/client/build/index.html`));
 });
 
 module.exports = app;
