@@ -172,7 +172,10 @@ io.on('connection', (socket) => {
 
 server.listen(port, () => console.log(`Listening on port ${port}`));
 
-app.use(express.static(path.resolve(__dirname, './client/build')));
+//app.use(express.static(path.resolve(__dirname, './client/build')));
+
+app.use(express.static(path.join(__dirname, 'build')))
+    .use(cors())
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(`${__dirname}/../client/build/index.html`));
