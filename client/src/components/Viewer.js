@@ -44,7 +44,7 @@ class Viewer extends React.Component {
                 {records.map((r, i) => (
                     <div class="ProjectSectionBlock">
                         <div class="RoomComponentList"  key={i}>
-                            <img class="rounded" src={image1} width="50" height="50"alt=" UserImage "></img>
+                            <img class="round" src={image1} width="50" height="50"alt=" UserImage "></img>
                             {r}
                         </div>
                     </div>
